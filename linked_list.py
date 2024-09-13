@@ -1,12 +1,16 @@
 class Node:
-    def __init__(self, data):
+    def __init__(self, data, n=None):
         self.data = data
-        self.next = None
+        self.next = n
 
 class LinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+
+    def insert_at_beginning(self, data):
+        node = Node(data, self.head)
+        self.head = node
 
     def insert(self, data):
         node = Node(data)
